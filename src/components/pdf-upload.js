@@ -50,42 +50,45 @@ export const PDFUpload = (props) => {
         }
     }
 
-
-    return (
-        <div className="container">
-
-        {/* Upload PDF */}
-        <form>
-
-        <label><h5>Upload PDF</h5></label>
-        <br></br>
-
-        <input type='file' className="form-control"
-        onChange={handleFile}></input>
-
-        {/* we will display error message in case user select some file
-        other than pdf */}
-        {pdfError&&<span className='text-danger'>{pdfError}</span>}
-
-        </form>
-
-        {/* View PDF */}
-        <h5>View PDF</h5>
-        <div className="viewer">
-
-        {/* render this if we have a pdf file */}
-        {pdfFile&&(
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
-            <Viewer fileUrl={pdfFile}
-            plugins={[defaultLayoutPluginInstance]}></Viewer>
-            </Worker>
-        )}
-
-        {/* render this if we have pdfFile state null   */}
-        {!pdfFile&&<>No file is selected yet</>}
-
+    //if visible, then display the pdf upload
+    if(props.visibility){
+        return (
+            <div className="container">
+    
+            {/* Upload PDF */}
+            <form>
+    
+            <label><h5>Upload PDF</h5></label>
+            <br></br>
+    
+            <input type='file' className="form-control"
+            onChange={handleFile}></input>
+    
+            {/* we will display error message in case user select some file
+            other than pdf */}
+            {pdfError&&<span className='text-danger'>{pdfError}</span>}
+    
+            </form>
+    
+            {/* View PDF */}
+            <h5>View PDF</h5>
+            <div className="viewer">
+    
+            {/* render this if we have a pdf file */}
+            {pdfFile&&(
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
+                <Viewer fileUrl={pdfFile}
+                plugins={[defaultLayoutPluginInstance]}></Viewer>
+                </Worker>
+            )}
+    
+            {/* render this if we have pdfFile state null   */}
+            {!pdfFile&&<>No file is selected yet</>}
+    
+            </div>
+    
         </div>
+        )
+    }
 
-    </div>
-    )
 }
