@@ -18,7 +18,6 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 export const PDFViewer = () => {
     // creating new plugin instance
-    console.log('pdf')
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
     // pdf file onChange state

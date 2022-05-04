@@ -4,7 +4,6 @@ import {Body} from './components/body.js'
 
 
 function App() {
-  console.log('hello')
   return (
     <Body/>
   );
