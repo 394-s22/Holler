@@ -3,3 +3,7 @@ Component for a page that shows all the PDFs the user has uploaded, and allows t
 and open the page with the pdf-viewer and buttons.
 
 */
+
+export const PDFs = () => {
+    
+}
