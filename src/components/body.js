@@ -8,5 +8,11 @@ This component will have all the important stuff. So then in App we can just do 
 */
 
 export const Body = () => {
-    <p>Hello world, this is Holler</p>
+    return (
+    <div>
+        <PDFViewer/>
+    </div>
+    )
 }
+
+export default Body;
