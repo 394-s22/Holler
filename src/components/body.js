@@ -22,12 +22,15 @@ export const Body = () => {
         setUploadVisibility(!uploadVisibility);
         setPdfVisibility(!pdfVisibility);
     }
-
+    // className='body'
     return (
-    <div className='body'>
-        <Buttons/>
+    <div >
         <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile} />
-        <PDFViewer visibility = {pdfVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile}/>
+        <div className='body'>
+            <PDFViewer visibility = {pdfVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile}/>
+            <Buttons visibility = {pdfVisibility}/>
+        </div>
+        
     </div>
     )
 }
