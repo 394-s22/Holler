@@ -22,7 +22,6 @@ export const PDFUpload = (props) => {
     const allowedFiles = ['application/pdf'];
     const handleFile = (e) =>{
         let selectedFile = e.target.files[0];
-        // console.log(selectedFile.type);
         if(selectedFile){
         if(selectedFile&&allowedFiles.includes(selectedFile.type)){
             let reader = new FileReader();
@@ -42,6 +41,10 @@ export const PDFUpload = (props) => {
         console.log('please select a PDF');
         }
     }
+    const getPDFAttributes = (e) => {
+        let fileName = e.target.files[0].name;
+        console.log(fileName)
+    }
 
     //if visible, then display the pdf upload
     if(props.visibility){
@@ -54,7 +57,7 @@ export const PDFUpload = (props) => {
             <br></br>
     
             <input type='file' className="form-control"
-            onChange={(e) => {handleFile(e); props.handleVisibility();}}></input>
+            onChange={(e) => {handleFile(e); props.handleVisibility(); getPDFAttributes(e);}}></input>
     
             {/* we will display error message in case user select some file
             other than pdf */}
