@@ -8,6 +8,7 @@ This component will have all the important stuff. So then in App we can just do 
 */
 
 export const Body = () => {
+    console.log(document.getElementsByClassName('form-control')[0].files[0]["name"])
     return (
     <div>
         <PDFViewer/>

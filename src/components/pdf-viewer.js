@@ -30,6 +30,7 @@ export const PDFViewer = () => {
     // handle file onChange event
     const allowedFiles = ['application/pdf'];
     const handleFile = (e) =>{
+
         let selectedFile = e.target.files[0];
         // console.log(selectedFile.type);
         if(selectedFile){
