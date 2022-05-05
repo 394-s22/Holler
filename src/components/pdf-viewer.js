@@ -23,7 +23,7 @@ export const PDFViewer = (props) => {
     if(props.visibility){
         return (
             <div className="container">
-    
+            <button onClick={() => {props.handleVisibility(); props.setPdfFile("")}}>UPLOAD AGAIN</button>
             {/* View PDF */}
             <h5>View PDF</h5>
             <div className="viewer">

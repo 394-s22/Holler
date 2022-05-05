@@ -47,7 +47,6 @@ export const PDFUpload = (props) => {
     if(props.visibility){
         return (
             <div className="container">
-    
             {/* Upload PDF */}
             <form>
     
