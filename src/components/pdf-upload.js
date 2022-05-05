@@ -11,6 +11,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { PDFs } from './pdfs-page.js';
 
 export const PDFUpload = (props) => {
 
@@ -44,11 +45,36 @@ export const PDFUpload = (props) => {
             console.log(fileName)
     
 
-    
 
+            }
+        }
+        else{
+            setPdfError('Not a valid pdf: Please select only PDF');
+            props.setPdfFile('');
+        }
+        }
+        else{
+        console.log('please select a PDF');
+        }
+    }
 
+    const getPdfAttrib = (e) =>{
+        let filename = e.target.files[0].fileName;
+        const allPdfs = pdfToList(data["cuad-dataset"]);
+       
+        let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"]=== filename);
+        console.log(filtered_pdf)
 
-
+        if(selectedFile){
+        if(selectedFile&&allowedFiles.includes(selectedFile.type)){
+            let reader = new FileReader();
+            reader.readAsDataURL(selectedFile);
+            reader.onloadend=(e)=>{
+            setPdfError('');
+            props.setPdfFile(e.target.result);
+            // pass this to pdf-viewer
+            let fileName = selectedFile.name;
+            console.log(fileName)
             }
         }
         else{
@@ -73,7 +99,7 @@ export const PDFUpload = (props) => {
             <br></br>
     
             <input type='file' className="form-control"
-            onChange={(e) => {handleFile(e); props.handleVisibility(); }}></input>
+            onChange={(e) => {handleFile(e); props.handleVisibility(); getPdfAttrib(e); }}></input>
     
             {/* we will display error message in case user select some file
             other than pdf */}
@@ -85,4 +111,11 @@ export const PDFUpload = (props) => {
         )
     }
 
+}
+
+const pdfToList = (pdf) =>{
+    let arr = [];
+    Object.keys(pdf).forEach(key => 
+      arr.push(pdf[key]))  
+    return arr;
 }
