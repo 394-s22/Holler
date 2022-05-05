@@ -3,6 +3,7 @@ A component that allows you to upload a PDF.
 */
 
 import {useState} from 'react'
+import {useData as get_data} from '../utilities/firebase.js'
 
 // Import the styles
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -13,10 +14,18 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 export const PDFUpload = (props) => {
 
+
+
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
     // pdf file error state
     const [pdfError, setPdfError]=useState('');
+
+    // getting data
+    const [data, loading, error] = get_data('/'); 
+    if (error) return <h1>{error}</h1>;
+    if (loading) return <h1>Loading the Data...</h1>
+    console.log(data)
 
     // handle file onChange event
     const allowedFiles = ['application/pdf'];
@@ -30,6 +39,16 @@ export const PDFUpload = (props) => {
             setPdfError('');
             props.setPdfFile(e.target.result);
             // pass this to pdf-viewer
+
+            let fileName = selectedFile.name;
+            console.log(fileName)
+    
+
+    
+
+
+
+
             }
         }
         else{
@@ -41,10 +60,7 @@ export const PDFUpload = (props) => {
         console.log('please select a PDF');
         }
     }
-    const getPDFAttributes = (e) => {
-        let fileName = e.target.files[0].name;
-        console.log(fileName)
-    }
+
 
     //if visible, then display the pdf upload
     if(props.visibility){
@@ -57,7 +73,7 @@ export const PDFUpload = (props) => {
             <br></br>
     
             <input type='file' className="form-control"
-            onChange={(e) => {handleFile(e); props.handleVisibility(); getPDFAttributes(e);}}></input>
+            onChange={(e) => {handleFile(e); props.handleVisibility(); }}></input>
     
             {/* we will display error message in case user select some file
             other than pdf */}
