@@ -4,6 +4,7 @@ A component that allows you to upload a PDF.
 
 import {useState} from 'react'
 import {useData as get_data} from '../utilities/firebase.js'
+import { Highlight } from './highlight.js';
 
 // Import the styles
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -63,6 +64,13 @@ export const PDFUpload = (props) => {
         const allPdfs = pdfToList(data["Cuad-Dataset"]);
         let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"] === filename);
         console.log(filtered_pdf)
+        return (
+            <div>
+                {/*PRINTS THIS STATMENT BUT DOESNT WORK*/}
+                 {console.log('asdfasdf')}
+                <Highlight pdf={filtered_pdf}/>
+            </div>
+        )
     }
 
 
