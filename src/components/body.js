@@ -13,6 +13,9 @@ This component will have all the important stuff. So then in App we can just do 
 
 
 export const Body = () => {
+
+    console.log(document.getElementsByClassName('form-control')[0].files[0]["name"])
+
     const [uploadVisibility, setUploadVisibility] = useState(true);
     const [pdfVisibility, setPdfVisibility] = useState(false);
     // pdf file onChange state
@@ -23,6 +26,7 @@ export const Body = () => {
         setPdfVisibility(!pdfVisibility);
     }
     // className='body'
+
     return (
     <div >
         <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile} />
