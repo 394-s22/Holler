@@ -5,13 +5,11 @@ import React from "react";
 import { Button } from "react-bootstrap";
 
 export const Buttons = () => {
-    console.log('test');
     return (
         <div className="buttons">
-            
-            <Button variant="primary" size="lg">Download</Button>
-            <Button variant="primary" size="lg">Request Signature</Button>
-            <Button variant="primary" size="lg">Delivery</Button>
+            <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Download</Button>
+            <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
+            <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
         </div>
     )    
     
