@@ -15,12 +15,8 @@ export const PDFUpload = (props) => {
 
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-    // pdf file onChange state
-    const [pdfFile, setPdfFile]=useState(null);
-
     // pdf file error state
     const [pdfError, setPdfError]=useState('');
-
 
     // handle file onChange event
     const allowedFiles = ['application/pdf'];
@@ -33,12 +29,13 @@ export const PDFUpload = (props) => {
             reader.readAsDataURL(selectedFile);
             reader.onloadend=(e)=>{
             setPdfError('');
-            setPdfFile(e.target.result);
+            props.setPdfFile(e.target.result);
+            // pass this to pdf-viewer
             }
         }
         else{
             setPdfError('Not a valid pdf: Please select only PDF');
-            setPdfFile('');
+            props.setPdfFile('');
         }
         }
         else{
@@ -58,7 +55,7 @@ export const PDFUpload = (props) => {
             <br></br>
     
             <input type='file' className="form-control"
-            onChange={handleFile}></input>
+            onChange={(e) => {handleFile(e); props.handleVisibility();}}></input>
     
             {/* we will display error message in case user select some file
             other than pdf */}

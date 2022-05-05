@@ -14,6 +14,8 @@ This component will have all the important stuff. So then in App we can just do 
 export const Body = () => {
     const [uploadVisibility, setUploadVisibility] = useState(true);
     const [pdfVisibility, setPdfVisibility] = useState(false);
+    // pdf file onChange state
+    const [pdfFile, setPdfFile] = useState(null);
 
     const handleVisibility = () =>{
         setUploadVisibility(!uploadVisibility);
@@ -22,8 +24,8 @@ export const Body = () => {
 
     return (
     <div>
-        <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} />
-        <PDFViewer visibility = {pdfVisibility} handleVisibility = {handleVisibility}/>
+        <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile} />
+        <PDFViewer visibility = {pdfVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile}/>
     </div>
     )
 }
