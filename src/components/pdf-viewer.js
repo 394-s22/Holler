@@ -16,9 +16,10 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
-export const PDFViewer = () => {
+export const PDFViewer = (props) => {
     // creating new plugin instance
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
+
 
     // pdf file onChange state
     const [pdfFile, setPdfFile]=useState(null);
@@ -84,10 +85,33 @@ export const PDFViewer = () => {
         {/* render this if we have pdfFile state null   */}
         {!pdfFile&&<>No file is selected yet</>}
 
-        </div>
 
-    </div>
-  )
+    if(props.visibility){
+        return (
+            <div className="container">
+            <button onClick={() => {props.handleVisibility(); props.setPdfFile("")}}>UPLOAD AGAIN</button>
+            {/* View PDF */}
+            <h5>View PDF</h5>
+            <div className="viewer">
+    
+            {/* render this if we have a pdf file */}
+            {props.pdfFile&&(
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
+                <Viewer fileUrl={props.pdfFile}
+                plugins={[defaultLayoutPluginInstance]}></Viewer>
+                </Worker>
+            )}
+    
+            {/* render this if we have pdfFile state null   */}
+            {!props.pdfFile&&<>No file is selected yet</>}
+    
+            </div>
+    
+
+        </div>
+      )
+    }
+    
 }
 
 export default PDFViewer;
