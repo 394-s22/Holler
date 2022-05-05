@@ -59,32 +59,10 @@ export const PDFUpload = (props) => {
     }
 
     const getPdfAttrib = (e) =>{
-        let filename = e.target.files[0].fileName;
-        const allPdfs = pdfToList(data["cuad-dataset"]);
-       
-        let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"]=== filename);
+        let filename = e.target.files[0].name;
+        const allPdfs = pdfToList(data["Cuad-Dataset"]);
+        let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"] === filename);
         console.log(filtered_pdf)
-
-        if(selectedFile){
-        if(selectedFile&&allowedFiles.includes(selectedFile.type)){
-            let reader = new FileReader();
-            reader.readAsDataURL(selectedFile);
-            reader.onloadend=(e)=>{
-            setPdfError('');
-            props.setPdfFile(e.target.result);
-            // pass this to pdf-viewer
-            let fileName = selectedFile.name;
-            console.log(fileName)
-            }
-        }
-        else{
-            setPdfError('Not a valid pdf: Please select only PDF');
-            props.setPdfFile('');
-        }
-        }
-        else{
-        console.log('please select a PDF');
-        }
     }
 
 
@@ -115,6 +93,7 @@ export const PDFUpload = (props) => {
 
 const pdfToList = (pdf) =>{
     let arr = [];
+    console.log(pdf);
     Object.keys(pdf).forEach(key => 
       arr.push(pdf[key]))  
     return arr;
