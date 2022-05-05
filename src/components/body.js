@@ -4,6 +4,7 @@ import { PDFs } from "./pdfs-page.js";
 import {PDFUpload } from "./pdf-upload.js";
 import {useState} from 'react'
 
+
 /*
 This component will have all the important stuff. So then in App we can just do <Body/>
 */
@@ -23,7 +24,8 @@ export const Body = () => {
     }
 
     return (
-    <div>
+    <div className='body'>
+        <Buttons/>
         <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile} />
         <PDFViewer visibility = {pdfVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile}/>
     </div>
