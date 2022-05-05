@@ -9,7 +9,9 @@ export const Buttons = () => {
     return (
         <div className="buttons">
             
-            <Button variant="primary" size="sm"></Button>
+            <Button variant="primary" size="lg">Download</Button>
+            <Button variant="primary" size="lg">Request Signature</Button>
+            <Button variant="primary" size="lg">Delivery</Button>
         </div>
     )    
     

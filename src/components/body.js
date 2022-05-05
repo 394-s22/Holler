@@ -8,7 +8,7 @@ This component will have all the important stuff. So then in App we can just do 
 
 export const Body = () => {
     return (
-    <div>
+    <div className='body'>
         <PDFViewer/>
         <Buttons/>
     </div>
