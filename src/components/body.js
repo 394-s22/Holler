@@ -18,6 +18,7 @@ export const Body = () => {
     const [pdfVisibility, setPdfVisibility] = useState(false);
     // pdf file onChange state
     const [pdfFile, setPdfFile] = useState(null);
+    const [date, setDate] = useState("1/1/1990");
 
     const handleVisibility = () =>{
         setUploadVisibility(!uploadVisibility);
@@ -27,10 +28,10 @@ export const Body = () => {
 
     return (
     <div >
-        <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile} />
+        <PDFUpload visibility = {uploadVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile} setDate = {setDate} />
         <div className='body'>
             <PDFViewer visibility = {pdfVisibility} handleVisibility = {handleVisibility} pdfFile = {pdfFile} setPdfFile = {setPdfFile}/>
-            <Buttons visibility = {pdfVisibility}/>
+            <Buttons visibility = {pdfVisibility} date = {date} />
         </div>
         
     </div>
