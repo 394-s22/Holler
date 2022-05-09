@@ -16,8 +16,8 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
-import { highlightPlugin } from '@react-pdf-viewer/highlight';
-import '@react-pdf-viewer/highlight/lib/styles/index.css';
+//import { highlightPlugin } from '@react-pdf-viewer/highlight';
+//import '@react-pdf-viewer/highlight/lib/styles/index.css';
 
 
 export const PDFViewer = (props) => {
