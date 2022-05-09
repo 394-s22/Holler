@@ -66,9 +66,9 @@ export const PDFUpload = (props) => {
         console.log(filtered_pdf)
         return (
             <div>
-                {/*PRINTS THIS STATMENT BUT DOESNT WORK*/}
+                {/*PRINTS THIS STATMENT BUT highlight DOESNT WORK*/}
                  {console.log('asdfasdf')}
-                <Highlight pdf={filtered_pdf}/>
+                {/* <Highlight pdf={filtered_pdf}/> */} 
             </div>
         )
     }
