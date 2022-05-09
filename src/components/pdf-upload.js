@@ -65,7 +65,7 @@ export const PDFUpload = (props) => {
         let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"] === filename);
         console.log(filtered_pdf)
         let date=filtered_pdf[0]["Expiration Date-Answer"];
-        props.setDate(filtered_pdf[0]["Expiration Date"]); // potential error
+        props.setDate(filtered_pdf[0]["Expiration Date-Answer"]); // potential error
         console.log(date)
         console.log(document.getElementsByClassName('expiration')[0])
         console.log(document.getElementsByClassName('expiration').item(0))
