@@ -64,20 +64,14 @@ export const PDFUpload = (props) => {
         const allPdfs = pdfToList(data["Cuad-Dataset"]);
         let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"] === filename);
         console.log(filtered_pdf)
-        let date=filtered_pdf[0]["Expiration Date-Answer"];
-        props.setDate(filtered_pdf[0]["Expiration Date-Answer"]); // potential error
-        console.log(date)
-        console.log(document.getElementsByClassName('expiration')[0])
-        console.log(document.getElementsByClassName('expiration').item(0))
-        //document.getElementsByClassName('expiration')[0].setAttribute('data_',date)
-        return (
-            <div>
-                <p>{date}</p>
-                {/*PRINTS THIS STATMENT BUT highlight DOESNT WORK*/}
-                 {console.log('asdfasdf')}
-                {/* <Highlight pdf={filtered_pdf}/> */} 
-            </div>
-        )
+        props.setDate(filtered_pdf[0]["Expiration Date-Answer"]);
+        props.setDatedesc(filtered_pdf[0]["Expiration Date"]);
+        props.setRev(filtered_pdf[0]["Revenue-Profit Sharing"]);
+        props.setRevDesc(filtered_pdf[0]["Revenue-Profit Sharing-Answer"]);
+        
+
+        //[0]["Revenue-Profit Sharing"]
+        //[0]["Revenue-Profit Sharing-Answer"]
     }
 
 

@@ -8,10 +8,13 @@ import { Button } from "react-bootstrap";
 //replace button
 export const Buttons = (props) => {
     if(props.visibility) {
+        console.log(props.PdfFile)
         return (
             <div className="buttons">
-                <p>PDF Location: The initial term of this Agreement commences as of the Effective Date and, unless terminated earlier pursuant to any express provision of this Agreement, shall continue until five (5) years following the Effective Date (the "Initial Term").</p>
                 <p>Expiration date: {props.date}</p>
+                <p>Date Description: {props.dateDesc}</p>
+                <p>Revenue Profit Sharing: {props.rev}</p>
+                <p>Revenue Profit Sharing Description: {props.revDesc}</p>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
             </div>
