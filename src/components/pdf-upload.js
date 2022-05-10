@@ -100,7 +100,7 @@ export const PDFUpload = (props) => {
 
 }
 
-const pdfToList = (pdf) =>{
+export const pdfToList = (pdf) =>{
     let arr = [];
     console.log(pdf);
     Object.keys(pdf).forEach(key => 
