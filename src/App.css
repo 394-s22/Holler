@@ -17,15 +17,22 @@
   display: flex;
 }
 
+.br {
+  display: block;
+  line-height: 150%;
+}
+
 .container{
-  width: 50%;
+  width: 90%;
+  margin-left: 12%;
+  margin-right: 5%;
   float:left;
 }
 .buttons{
   display: flex;
   flex-direction: column;
   margin-top: 25%;
-  padding-left: 2%;
+  padding-right: 5%;
   float: left;
 }
 .App-header {

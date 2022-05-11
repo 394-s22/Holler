@@ -3,8 +3,9 @@ Component to hold UI section / buttons on the right side of the screen when view
 */
 import {React, useState} from "react";
 import { Button } from "react-bootstrap";
-
-
+import {View,Stylesheet, Text, TouchableOpacity} from "react-native";
+import './button.css';
+//awesomefont
 //replace button
 export const Buttons = (props) => {
     const [info_vis, set_info_vis] = useState(false);
@@ -14,6 +15,7 @@ export const Buttons = (props) => {
     if(props.visibility) {
         console.log(props.PdfFile)
         return (
+           
             <div className="buttons">
                 
                 <Button onClick = {change_info_vis} variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Information</Button>
@@ -21,7 +23,9 @@ export const Buttons = (props) => {
                 <p>Date Description: {props.dateDesc}</p>
                 <p>Revenue Profit Sharing: {props.rev}</p>
                 <p>Revenue Profit Sharing Description: {props.revDesc}</p></p> : null}
+                <br></br>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
+                <br></br>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
             </div>
         ) 
@@ -36,4 +40,3 @@ export const get_info = () => {
         </div>
     )
 }
-
