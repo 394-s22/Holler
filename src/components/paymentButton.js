@@ -7,6 +7,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { createPromiseCapability } from "pdfjs-dist";
 
 toast.configure();
 
@@ -14,7 +15,7 @@ toast.configure();
 export const PaymentButton = (props) => {
 
     const [product] = useState({
-        name: "Service Fee",
+        name: props.pdfName,
         price: 0.99,
         description: "Cool car"
       });

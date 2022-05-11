@@ -23,7 +23,7 @@ export const Buttons = (props) => {
                 <p>Revenue Profit Sharing Description: {props.revDesc}</p></p> : null}
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
-                <PaymentButton rev={props.rev} file={props.PdfFile}/>
+                <PaymentButton rev={props.rev} pdfName={props.pdfName}/>
             </div>
         ) 
     }
