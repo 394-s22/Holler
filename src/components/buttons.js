@@ -4,9 +4,9 @@ Component to hold UI section / buttons on the right side of the screen when view
 import {React, useState} from "react";
 import { Button } from "react-bootstrap";
 import InfoButton from "./info-button.js"
-
 import './button.css';
-//awesomefont
+import { PaymentButton } from "./paymentButton";
+
 //replace button
 export const Buttons = (props) => {
     if(props.visibility) {
@@ -18,16 +18,9 @@ export const Buttons = (props) => {
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
                 <br></br>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
+                <PaymentButton rev={props.rev} pdfName={props.pdfName}/>
             </div>
         ) 
     }
 }
 
-export const get_info = () => {
-    let info = document.getElementById('expiration').getAttribute('data_')
-    return (
-        <div>
-            {info}
-        </div>
-    )
-}
