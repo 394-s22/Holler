@@ -3,7 +3,7 @@ Component to hold UI section / buttons on the right side of the screen when view
 */
 import {React, useState} from "react";
 import { Button } from "react-bootstrap";
-
+import { PaymentButton } from "./paymentButton";
 
 //replace button
 export const Buttons = (props) => {
@@ -23,17 +23,9 @@ export const Buttons = (props) => {
                 <p>Revenue Profit Sharing Description: {props.revDesc}</p></p> : null}
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
                 <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
+                <PaymentButton rev={props.rev} pdfName={props.pdfName}/>
             </div>
         ) 
     }
-}
-
-export const get_info = () => {
-    let info = document.getElementById('expiration').getAttribute('data_')
-    return (
-        <div>
-            {info}
-        </div>
-    )
 }
 
