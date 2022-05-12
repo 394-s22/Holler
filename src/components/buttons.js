@@ -12,7 +12,6 @@ export const Buttons = (props) => {
     if(props.visibility) {
         console.log(props.PdfFile)
         return (
-           
             <div className="buttons">
                 <InfoButton props={props}/>
                 <br></br>

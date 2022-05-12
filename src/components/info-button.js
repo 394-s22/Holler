@@ -26,7 +26,6 @@ class InfoButton extends Component {
   render() {
     return (
       <main>
-        <h1>Information</h1>
         <Modal show={this.state.show} handleClose={this.hideModal}>
           <div>
             <p>Expiration date: {this.props.props.date}</p>
@@ -35,10 +34,10 @@ class InfoButton extends Component {
             <p>Revenue Profit Sharing Description: {this.props.props.revDesc}</p>
           </div>
         </Modal>
-        <button type="button" onClick={this.showModal}>
-          Open
-        </button>
-      </main>
+        <button variant="primary" class="info-button" onClick={this.showModal}>
+        <img src="https://i.ibb.co/rcWp0Rj/image.png" alt="image" border="0"></img>       
+         </button>
+        </main>
     );
   }
 }

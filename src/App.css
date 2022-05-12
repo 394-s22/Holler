@@ -31,9 +31,16 @@
 .buttons{
   display: flex;
   flex-direction: column;
-  margin-top: 25%;
+  margin-top: 10%;
   padding-right: 5%;
   float: left;
+}
+.info-button{
+  background-color: white;
+  border-color: #282c34;
+}
+.info-button:hover{
+  border-color:rgb(192, 34, 157)
 }
 .App-header {
   background-color: #282c34;
