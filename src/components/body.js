@@ -34,9 +34,11 @@ export const Body = () => {
     return (
     <div >
         <PDFUpload 
+        //MAYBE USE AWAIT ASYNC TO GET PDF FILE
         visibility = {uploadVisibility} 
         handleVisibility = {handleVisibility} 
         pdfFile = {pdfFile} 
+
         setPdfFile = {setPdfFile} 
         setDate = {setDate} 
         setRev={setRev}

@@ -69,6 +69,7 @@ export const PDFUpload = (props) => {
         props.setRev(filtered_pdf[0]["Revenue-Profit Sharing"]);
         props.setRevDesc(filtered_pdf[0]["Revenue-Profit Sharing-Answer"]);
         props.setpdfName(filtered_pdf[0]["Filename"])
+        //props.setPdfFile(filtered_pdf[0]);
 
         //[0]["Revenue-Profit Sharing"]
         //[0]["Revenue-Profit Sharing-Answer"]
