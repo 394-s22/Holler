@@ -17,7 +17,7 @@ export const PaymentButton = (props) => {
     const [product] = useState({
         name: props.pdfName,
         price: 0.99,
-        description: "Cool car"
+        description: "Service"
       });
     
       async function handleToken(token, addresses) {
