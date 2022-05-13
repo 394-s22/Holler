@@ -36,12 +36,21 @@
   float: left;
 }
 .info-button{
-  background-color: white;
-  border-color: #282c34;
+  background-color: rgb(255, 255, 255);
+  border-color: #50e157;
+  border-width: 10px;
 }
 .info-button:hover{
   border-color:rgb(192, 34, 157)
 }
+ 
+.info-title{
+  display: flex;
+  font-size: 30px;
+  height: 10px;
+  color: black;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
