@@ -49,14 +49,16 @@ export const Body = () => {
             pdfFile = {pdfFile} 
             setPdfFile = {setPdfFile}
             />
-            <Buttons 
-            visibility = {pdfVisibility} 
-            date = {date} 
-            rev = {rev}
-            dateDesc = {dateDesc}
-            revDesc = {revDesc}/>
-            <CalendarInterface
-            visibility = {pdfVisibility}/>
+            <div className='container-2'>
+                <Buttons 
+                visibility = {pdfVisibility} 
+                date = {date} 
+                rev = {rev}
+                dateDesc = {dateDesc}
+                revDesc = {revDesc}/>
+                <CalendarInterface 
+                visibility = {pdfVisibility}/>
+            </div>
             
         </div>
         

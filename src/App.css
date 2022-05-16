@@ -21,11 +21,18 @@
   width: 50%;
   float:left;
 }
+
+.container-2{
+  width: 50%;
+  float:right;
+}
+
 .buttons{
   display: flex;
   flex-direction: column;
-  margin-top: 25%;
+  margin-top: 15%;
   padding-left: 2%;
+  margin-bottom: 5%;
   float: left;
 }
 .App-header {
@@ -53,9 +60,9 @@
 }
 
 #calendarEmbedWrapper {
-  width: 80%;
+  width: 90%;
   min-height: 300px;
-  margin-left: 10%;
+  margin-left: 5%;
   position: relative;
 }
 #calendarEmbed,#calendarEmbedBlocker {
@@ -63,13 +70,8 @@
   height: 100%;
   position: absolute;
 }
-#calendarEmbedBlocker {
-  background-color: #e15151;
-}
+
 #calendarEmbedBlocker p {
-  width: 50%;
-  margin-left: 25%;
-  margin-top: 19%;
   text-align: center;
   font-size: x-large;
 }

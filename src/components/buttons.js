@@ -4,6 +4,7 @@ Component to hold UI section / buttons on the right side of the screen when view
 import React from "react";
 import { Button } from "react-bootstrap";
 import Calendar from "./calendar";
+import { CalendarInterface } from "./calendar-page";
 
 
 //replace button
