@@ -3,6 +3,7 @@ import { PDFViewer } from "./pdf-viewer.js";
 import { PDFs } from "./pdfs-page.js";
 import {PDFUpload } from "./pdf-upload.js";
 import {useState} from 'react'
+import { CalendarInterface } from "./calendar-page.js";
 
 
 /*
@@ -54,7 +55,8 @@ export const Body = () => {
             rev = {rev}
             dateDesc = {dateDesc}
             revDesc = {revDesc}/>
-            
+            <CalendarInterface
+            visibility = {pdfVisibility}/>
             
         </div>
         
