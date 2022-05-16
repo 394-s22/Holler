@@ -2,9 +2,9 @@
 Component to hold UI section / buttons on the right side of the screen when viewing a single PDF
 */
 import React from "react";
-import { Button } from "react-bootstrap";
 import Calendar from "./calendar";
 import { CalendarInterface } from "./calendar-page";
+import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 
 
 //replace button
@@ -17,9 +17,9 @@ export const Buttons = (props) => {
                 <p>Date Description: {props.dateDesc}</p>
                 <p>Revenue Profit Sharing: {props.rev}</p>
                 <p>Revenue Profit Sharing Description: {props.revDesc}</p>
-                <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Request Signature</Button>
-                <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
-                <Button variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }} >Add Event to Calendar</Button>
+                <Button marginBottom={10} >Request Signature</Button>
+                <Button marginBottom={10} variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
+                <Button marginBottom={10} variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }} >Add Event to Calendar</Button>
                 <Calendar/>
             </div>
         ) 

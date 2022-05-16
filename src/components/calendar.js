@@ -1,4 +1,5 @@
 import React from "react"
+import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 
 const calendar = () =>{
     var gapi = window.gapi
@@ -48,9 +49,9 @@ const calendar = () =>{
     }
 
     return (
-        <div>
-            <button onClick={handleClick}>Add a event</button>
-        </div>
+        <>
+            <Button color = "green-500" variant="cta" size="lg" onClick={handleClick}>Add a event</Button>
+        </>
     )
 }
 

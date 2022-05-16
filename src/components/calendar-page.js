@@ -1,13 +1,11 @@
 
-
+import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 export const CalendarInterface = (props) => {
     if(props.visibility) {
         return(
             <>
-            <input type="email" placeholder="user@gmail.com" id="email"/>
-            <button onClick={showCal}>Load</button>
-
-            <h3>Your calendar:</h3>
+            <h3>Your calendar: <input type="email" placeholder="user@gmail.com" id="email"/>
+            <Button variant="cta" onClick={showCal}>Load</Button></h3>
             <div id="calendarEmbedWrapper">
                 <iframe id="calendarEmbed"></iframe>
                 <div id="calendarEmbedBlocker">
