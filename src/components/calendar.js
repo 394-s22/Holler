@@ -30,7 +30,7 @@ const calendar = () =>{
                     'location': '800 Howard St., San Francisco, CA 94103',
                     'description': 'This Agreement shall become effective as of the Effective Date and, unless earlier terminated as provided in this ARTICLE 12, shall extend until the four (4) year anniversary of the Effective Date (the "Term").',
                     'start': {
-                      'dateTime': '2018-09-26T09:00:00-07:00',
+                      'dateTime': '2022-09-26T09:00:00-07:00',
                       'timeZone': 'America/Los_Angeles'
                     },
                     'end': {
