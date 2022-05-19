@@ -26,21 +26,41 @@ const calendar = () =>{
 
 
                 var event = {
-                    "end": {
-                        "dateTime": '2022-05-28T17:00:00-08:00:00'
+                    'summary': 'CO-PROMOTION AGREEMENT-DOVA PHARMACEUTICALS, INC',
+                    'location': '800 Howard St., San Francisco, CA 94103',
+                    'description': 'This Agreement shall become effective as of the Effective Date and, unless earlier terminated as provided in this ARTICLE 12, shall extend until the four (4) year anniversary of the Effective Date (the "Term").',
+                    'start': {
+                      'dateTime': '2018-09-26T09:00:00-07:00',
+                      'timeZone': 'America/Los_Angeles'
                     },
-                    "start": {
-                        "dateTime": '2022-05-28T17:00:00-07:00:00'
+                    'end': {
+                      'dateTime': '2022-09-26T17:00:00-07:00',
+                      'timeZone': 'America/Los_Angeles'
+                    },
+                    'recurrence': [
+                      'RRULE:FREQ=DAILY;COUNT=2'
+                    ],
+                    'attendees': [
+                      {'email': 'yijianli2023@u.northwestern.edu'},
+                      {'email': 'sbrin@example.com'}
+                    ],
+                    'reminders': {
+                      'useDefault': false,
+                      'overrides': [
+                        {'method': 'email', 'minutes': 24 * 60},
+                        {'method': 'popup', 'minutes': 10}
+                      ]
                     }
-                }
-
+                  };
+                
                 var request = gapi.client.calendar.events.insert({
                     'calendarId':'primary',
                     'resource':event
                 })
-
+                console.log(request)
                 request.execute(event => {
                     window.open(event.htmlLink, '_blank')
+                    // appendPre('Event created: ' + event.htmlLink);
                 })
             }).catch(e => {
                 console.log(e)
@@ -54,5 +74,9 @@ const calendar = () =>{
         </>
     )
 }
-
+function appendPre(message) {
+    var pre = document.getElementById('output');
+    var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(textContent);
+  }
 export default calendar
