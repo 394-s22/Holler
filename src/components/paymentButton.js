@@ -40,7 +40,7 @@ export const PaymentButton = (props) => {
               stripeKey="pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233"
               token={handleToken}
               amount={product.price * 100}
-              name= {props.pdfName.split("_")[0]}
+              name= "Test Account"
               billingAddress
               shippingAddress
             />
