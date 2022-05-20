@@ -17,8 +17,15 @@
   display: flex;
 }
 
+.br {
+  display: block;
+  line-height: 150%;
+}
+
 .container{
-  width: 50%;
+  width: 90%;
+  margin-left: 12%;
+  margin-right: 5%;
   float:left;
 }
 
@@ -77,4 +84,11 @@
 #calendarEmbedBlocker p {
   text-align: center;
   font-size: x-large;
+}
+
+.containerPayment {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 1em;
 }

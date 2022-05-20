@@ -4,7 +4,7 @@ import { PDFs } from "./pdfs-page.js";
 import {PDFUpload } from "./pdf-upload.js";
 import {useState} from 'react'
 import { CalendarInterface } from "./calendar-page.js";
-
+import '../App.css' 
 
 /*
 This component will have all the important stuff. So then in App we can just do <Body/>
@@ -23,6 +23,7 @@ export const Body = () => {
     const [dateDesc, setDatedesc] = useState("fill in desc");
     const [rev, setRev] = useState("NA"); //Yes/No
     const [revDesc, setRevDesc] = useState("NA2"); //Yes/No
+    const [pdfName, setpdfName] = useState("NA2"); //Yes/No
 
     const handleVisibility = () =>{
         setUploadVisibility(!uploadVisibility);
@@ -34,14 +35,17 @@ export const Body = () => {
     return (
     <div >
         <PDFUpload 
+        //MAYBE USE AWAIT ASYNC TO GET PDF FILE
         visibility = {uploadVisibility} 
         handleVisibility = {handleVisibility} 
         pdfFile = {pdfFile} 
+
         setPdfFile = {setPdfFile} 
         setDate = {setDate} 
         setRev={setRev}
         setRevDesc = {setRevDesc}
-        setDatedesc = {setDatedesc}/>
+        setDatedesc = {setDatedesc}
+        setpdfName = {setpdfName}/>
         <div className='body'>
             <PDFViewer 
             visibility = {pdfVisibility} 
