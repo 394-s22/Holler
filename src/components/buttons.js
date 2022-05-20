@@ -16,12 +16,13 @@ export const Buttons = (props) => {
         console.log(props.PdfFile)
         return (
             <div className="buttons">
-                <p>Expiration date: {props.date}</p>
-                <p>Date Description: {props.dateDesc}</p>
-                <p>Revenue Profit Sharing: {props.rev}</p>
-                <p>Revenue Profit Sharing Description: {props.revDesc}</p>
-                <Button marginBottom={10} >Request Signature</Button>
-                <Button marginBottom={10} variant="primary" size="lg" style={{ backgroundColor: "#00B1E1" }}>Delivery</Button>
+                <div className="description">
+                    <p style={{ marginLeft: "35%", fontWeight:"bold", fontStyle: "italic"}}>Contract Information:</p>
+                    <p>Expiration date: {props.date}</p>
+                    <p>Date Description: {props.dateDesc}</p>
+                    <p>Revenue Profit Sharing: {props.rev}</p>
+                </div>
+                <br></br>
                 <Calendar/>
                 <PaymentButton rev={props.rev} pdfName={props.pdfName}/>
             </div>

@@ -37,7 +37,7 @@
 .buttons{
   display: flex;
   flex-direction: column;
-  margin-top: 15%;
+  margin-top: 20%;
   padding-left: 2%;
   margin-bottom: 5%;
   float: left;
@@ -92,3 +92,13 @@
   justify-items: center;
   padding: 1em;
 }
+
+.email-prompt{
+  position:relative; 
+  top:-10%;
+}
+
+.description{
+  border: 3px solid
+}
+

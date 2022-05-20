@@ -9,7 +9,7 @@ export const CalendarInterface = (props) => {
             <div id="calendarEmbedWrapper">
                 <iframe id="calendarEmbed"></iframe>
                 <div id="calendarEmbedBlocker">
-                    <p>Please enter email and click load</p>
+                    <p class="email-prompt">enter email to load calendar</p>
                 </div>
             </div>
             </>
