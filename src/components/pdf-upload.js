@@ -107,4 +107,4 @@ export const pdfToList = (pdf) =>{
     Object.keys(pdf).forEach(key => 
       arr.push(pdf[key]))  
     return arr;
-}
+} 

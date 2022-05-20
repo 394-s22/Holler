@@ -3,6 +3,7 @@ import { PDFViewer } from "./pdf-viewer.js";
 import { PDFs } from "./pdfs-page.js";
 import {PDFUpload } from "./pdf-upload.js";
 import {useState} from 'react'
+import { CalendarInterface } from "./calendar-page.js";
 import '../App.css' 
 
 /*
@@ -52,14 +53,16 @@ export const Body = () => {
             pdfFile = {pdfFile} 
             setPdfFile = {setPdfFile}
             />
-            <Buttons 
-            visibility = {pdfVisibility} 
-            date = {date} 
-            rev = {rev}
-            dateDesc = {dateDesc}
-            revDesc = {revDesc}
-            pdfName = {pdfName}/>
-            
+            <div className='container-2'>
+                <Buttons 
+                visibility = {pdfVisibility} 
+                date = {date} 
+                rev = {rev}
+                dateDesc = {dateDesc}
+                revDesc = {revDesc}/>
+                <CalendarInterface 
+                visibility = {pdfVisibility}/>
+            </div>
             
         </div>
         
