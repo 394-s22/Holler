@@ -4,7 +4,6 @@ import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 
 
 export const Highlight = (props) => {
-    console.log("search element");
     
     console.log("priinting props")
     console.log(props);
