@@ -9,7 +9,10 @@ export const Highlight = (props) => {
     console.log(props);
 
     const handleClick = () => {
-        document.getElementsByClassName('rpv-core__minimal-button')[3].click()
+        console.log(document.getElementsByClassName('rpv-search__popover-footer-button rpv-search__popover-footer-button--ltr'));
+        if (document.getElementsByClassName('rpv-search__popover-footer-button rpv-search__popover-footer-button--ltr').length === 0){
+            document.getElementsByClassName('rpv-core__minimal-button')[3].click()
+        }
         const myPromise = new Promise((resolve, reject) => {
             setTimeout(() => {
               resolve('foo');
