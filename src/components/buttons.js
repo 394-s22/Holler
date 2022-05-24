@@ -20,9 +20,11 @@ export const Buttons = (props) => {
                 <div className="description">
                     <p style={{ marginLeft: "35%", fontWeight:"bold", fontStyle: "italic"}}>Contract Information:</p>
                     <p>Expiration date: {props.date}</p>
+                    <Highlight info={props.date}/>
                     <p>Date Description: {props.dateDesc}</p>
                     <Highlight info={props.dateDesc}/>
                     <p>Revenue Profit Sharing: {props.rev}</p>
+                    <Highlight info={props.rev}/>
                 </div>
                 <br></br>
                 <Calendar/>

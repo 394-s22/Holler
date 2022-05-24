@@ -1,5 +1,6 @@
 import React from "react";
 import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
+import {jQuery} from "jquery";
 
 
 
@@ -22,12 +23,27 @@ export const Highlight = (props) => {
     }
     return (
         <Button onPress={() => handleClick().then(() => {
-            populate_search(props.info)
+            populate_search(props.info).then(()=>{
+                trigger_search()
+            })
         })} color = "green-500" variant="cta" size="lg" >Show Text</Button>
     );
 };
 
 const populate_search = (info) => {
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
-        document.getElementsByClassName('rpv-core__textbox')[0].value = info
+        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', 'territory');
+        console.log(document.getElementsByClassName('rpv-core__textbox')[0])
+        const myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve('foo');
+            }, 300)});
+        return myPromise
+
+}
+
+const trigger_search = () => {
+    var e = jQuery.Event("keypress");
+    e.which = 13; 
+    document.getElementsByClassName('rpv-core__textbox')[0].trigger(e);
 }
