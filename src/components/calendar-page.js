@@ -1,5 +1,9 @@
 
 import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
+
+/*
+Wrapper for user's calendar if they have entered their email. Otherwise, prompts them to enter email.
+*/
 export const CalendarInterface = (props) => {
     if(props.visibility) {
         return(
@@ -17,6 +21,9 @@ export const CalendarInterface = (props) => {
     }
 }
 
+/*
+Displays a user's Google Calendar upon entering their email
+*/
 function showCal(){
     var iframe = document.getElementById('calendarEmbed');
     var email = document.getElementById('email').value;
