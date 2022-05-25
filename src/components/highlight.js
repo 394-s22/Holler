@@ -30,10 +30,16 @@ export const Highlight = (props) => {
     );
 };
 
+
 const populate_search = (info) => {
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
-        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', '19');
+        // setting the value in the search textbox
+        if(info.length > 100) {
+            info = info.substring(0, 100)
+        }
+        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', info);
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
+        // dummy promise to keep things in order
         const myPromise = new Promise((resolve, reject) => {
             setTimeout(() => {
               resolve('foo');
@@ -43,7 +49,9 @@ const populate_search = (info) => {
 
 
 const trigger_search = () => {
+    console.log("hello")
+    console.log(document.getElementsByClassName('rpv-core__textbox')[0].value)
     var e = jQuery.Event("keypress");
-    e.which = 13; 
-    document.getElementsByClassName('rpv-core__textbox')[0].trigger(e);
+    e.which = 13; // enter
+    document.getElementsByClassName('rpv-core__textbox')[0].trigger();
 }
