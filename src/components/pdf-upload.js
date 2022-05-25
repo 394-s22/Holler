@@ -65,8 +65,10 @@ export const PDFUpload = (props) => {
         let filtered_pdf=allPdfs.filter(pdf => pdf["Filename"] === filename);
         console.log(filtered_pdf)
         props.setDate(filtered_pdf[0]["Expiration Date-Answer"]);
-        props.setDatedesc(filtered_pdf[0]["Expiration Date"]);
-        props.setRev(filtered_pdf[0]["Revenue-Profit Sharing"]);
+        let datedesc = filtered_pdf[0]["Expiration Date"]
+        props.setDatedesc(datedesc.substring(2, datedesc.length - 2));
+        let rev = filtered_pdf[0]["Revenue-Profit Sharing"]
+        props.setRev(rev.substring(2, rev.length - 2));
         props.setRevDesc(filtered_pdf[0]["Revenue-Profit Sharing-Answer"]);
         props.setpdfName(filtered_pdf[0]["Filename"])
         //props.setPdfFile(filtered_pdf[0]);

@@ -34,7 +34,10 @@ export const Highlight = (props) => {
 const populate_search = (info) => {
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
         // setting the value in the search textbox
-        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', 'territory');
+        if(info.length > 100) {
+            info = info.substring(0, 100)
+        }
+        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', info);
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
         // dummy promise to keep things in order
         const myPromise = new Promise((resolve, reject) => {
