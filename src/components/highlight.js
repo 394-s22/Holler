@@ -1,7 +1,7 @@
 import React from "react";
 import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 import {jQuery} from "jquery";
-
+import { Trigger } from "@react-pdf-viewer/highlight";
 
 
 export const Highlight = (props) => {
@@ -32,15 +32,15 @@ export const Highlight = (props) => {
 
 const populate_search = (info) => {
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
-        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', 'territory');
+        document.getElementsByClassName('rpv-core__textbox')[0].setAttribute('value', '19');
         console.log(document.getElementsByClassName('rpv-core__textbox')[0])
         const myPromise = new Promise((resolve, reject) => {
             setTimeout(() => {
               resolve('foo');
             }, 300)});
         return myPromise
-
 }
+
 
 const trigger_search = () => {
     var e = jQuery.Event("keypress");
