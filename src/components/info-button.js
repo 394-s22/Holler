@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import Modal from './modal.js';
 import './info.css';
+
+/*
+  Set of buttons to locate information on expiration date, date description, and so on
+  within the PDF.
+*/
 class InfoButton extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +27,6 @@ class InfoButton extends Component {
   };
 
   
-
   render() {
     return (
       <main>

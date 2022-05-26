@@ -1,9 +1,3 @@
-/*
-Component for the left side of a page when viewing a single PDF. Should allow scrolling through the PDF.
-
-*/
-
-import {useState} from 'react'
 
 // Import Worker
 import { Worker } from '@react-pdf-viewer/core';
@@ -18,6 +12,10 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 //import { highlightPlugin } from '@react-pdf-viewer/highlight';
 //import '@react-pdf-viewer/highlight/lib/styles/index.css';
+
+/*
+PDF viewer component, which occupies the left half of the screen after a PDF is uploaded.
+*/
 
 
 export const PDFViewer = (props) => {

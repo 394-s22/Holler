@@ -1,6 +1,3 @@
-/*
-Component to hold UI section / buttons on the right side of the screen when viewing a single PDF
-*/
 import Calendar from "./calendar";
 import { CalendarInterface } from "./calendar-page";
 import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
@@ -9,6 +6,12 @@ import {React, useState} from "react";
 import InfoButton from "./info-button.js"
 import './button.css';
 import { PaymentButton } from "./paymentButton";
+
+/*
+Component to hold email, pay, and add calendar event buttons,
+as well as text highlight buttons.
+Occupies the right half of the screen when viewing a single PDF.
+*/
 
 //replace button
 export const Buttons = (props) => {

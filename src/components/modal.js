@@ -1,5 +1,8 @@
 import '../modal.css';
 
+/*
+Class? used for info buttons.
+*/
 const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
