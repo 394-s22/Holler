@@ -1,6 +1,3 @@
-/*
-A component that allows you to upload a PDF. 
-*/
 
 import {useState} from 'react'
 import {useData as get_data} from '../utilities/firebase.js'
@@ -14,9 +11,13 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import { PDFs } from './pdfs-page.js';
 
+
+/*
+A component that allows a user to upload a PDF through a button.
+Note: ONLY pdfs from the corpus that Adobe sent work with the app features. 
+*/
+
 export const PDFUpload = (props) => {
-
-
 
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
@@ -45,8 +46,6 @@ export const PDFUpload = (props) => {
             let fileName = selectedFile.name;
             console.log(fileName)
     
-
-
             }
         }
         else{
@@ -59,6 +58,7 @@ export const PDFUpload = (props) => {
         }
     }
 
+    // Function to extract certain information about the pdf using the spreadsheet
     const getPdfAttrib = (e) =>{
         let filename = e.target.files[0].name;
         const allPdfs = pdfToList(data["Cuad-Dataset"]);
@@ -76,7 +76,7 @@ export const PDFUpload = (props) => {
     }
 
 
-    //if visible, then display the pdf upload
+    // display the PDF upload only if it should be visible
     if(props.visibility){
         return (
             <div className="container">
@@ -103,7 +103,7 @@ export const PDFUpload = (props) => {
 
 export const pdfToList = (pdf) =>{
     let arr = [];
-    console.log(pdf);
+    // console.log(pdf);
     Object.keys(pdf).forEach(key => 
       arr.push(pdf[key]))  
     return arr;
