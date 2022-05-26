@@ -2,7 +2,8 @@
 import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
 
 /*
-Component to display a widget of the user's Google calendar upon input of email.
+Component to display a widget of the user's Google calendar if they have entered email.
+Otherwise, prompts them to enter email.
 */
 export const CalendarInterface = (props) => {
     if(props.visibility) {
@@ -22,8 +23,12 @@ export const CalendarInterface = (props) => {
 }
 
 /*
+<<<<<<< HEAD
 Once a user enters an email, display their personal Google calendar 
 in place of "enter email to load calendar"
+=======
+Displays a user's Google Calendar upon entering their email
+>>>>>>> 5cf1c551c0097f189205dce4e412b54bf13643c5
 */
 function showCal(){
     var iframe = document.getElementById('calendarEmbed');

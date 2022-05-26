@@ -70,7 +70,11 @@ const calendar = () =>{
 
     return (
         <>
-            <Button color = "green-500" variant="cta" size="lg" onClick={handleClick}>Add a event</Button>
+        <div className="addEButt">
+        <Button  color = "green-500" variant="cta" size="lg" onClick={handleClick}>Add a event</Button>
+       
+        </div>
+        
         </>
     )
 }
