@@ -9,6 +9,10 @@ import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup } from '
 import { pdfToList } from './pdf-upload.js';
 
 
+/*
+Purple title bar displaying app name.
+*/
+
 let state = 0;
 
 const Title = () => {

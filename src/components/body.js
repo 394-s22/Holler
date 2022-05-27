@@ -7,29 +7,35 @@ import { CalendarInterface } from "./calendar-page.js";
 import '../App.css' 
 
 /*
-This component will have all the important stuff. So then in App we can just do <Body/>
+This component holds the entirety of the webapp, minus the title. 
 */
-
-
 
 
 export const Body = () => {
 
+    // state for whether the component prompting an upload is visible
     const [uploadVisibility, setUploadVisibility] = useState(true);
+    // state for whether the pdf display component is visible
     const [pdfVisibility, setPdfVisibility] = useState(false);
-    // pdf file onChange state
+    // state to get the uploaded pdf for display
     const [pdfFile, setPdfFile] = useState(null);
+    // state for the expiration date from the uploaded pdf
     const [date, setDate] = useState("1/1/1990");
+    // state for the expiration date description from the uploaded pdf
     const [dateDesc, setDatedesc] = useState("fill in desc");
+    // state for the payment description (?) from the uploaded pdf
     const [rev, setRev] = useState("NA"); //Yes/No
     const [revDesc, setRevDesc] = useState("NA2"); //Yes/No
     const [pdfName, setpdfName] = useState("NA2"); //Yes/No
 
+    /*
+    Function called after a pdf is uploaded. Changes upload page visibility and pdf viewer visibility
+    to "switch" to the pdf viewer page.
+    */
     const handleVisibility = () =>{
         setUploadVisibility(!uploadVisibility);
         setPdfVisibility(!pdfVisibility);
     }
-    // className='body'
 
 
     return (
