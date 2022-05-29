@@ -107,3 +107,7 @@
 .addEButt{
   margin-left:40%;
 }
+
+div div {
+  justify-items: center;
+}
