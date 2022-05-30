@@ -9,26 +9,31 @@ export const CalendarInterface = (props) => {
     if(props.visibility) {
         return(
             <>
-            <h3>Your calendar: <input type="email" placeholder="user@gmail.com" id="email"/>
-            <Button variant="cta" onClick={showCal}>Load</Button></h3>
-            <div id="calendarEmbedWrapper">
+            
+       
+            <h3>Your calendar: <input type="email" placeholder="user@gmail.com" id="email"/></h3>
+            {/* <Button variant="cta" onClick={showCal}>Load</Button> */}
+            <Provider theme = {defaultTheme} colorScheme="light">
+            
+                <Button variant="negative" onClick={showCal} isQuiet >Load</Button>
+            
+            </Provider>
+                    <div id="calendarEmbedWrapper">
                 <iframe id="calendarEmbed"></iframe>
                 <div id="calendarEmbedBlocker">
                     <p class="email-prompt">enter email to load calendar</p>
                 </div>
             </div>
+
+           
             </>
         );
     }
 }
 
 /*
-<<<<<<< HEAD
 Once a user enters an email, display their personal Google calendar 
 in place of "enter email to load calendar"
-=======
-Displays a user's Google Calendar upon entering their email
->>>>>>> 5cf1c551c0097f189205dce4e412b54bf13643c5
 */
 function showCal(){
     var iframe = document.getElementById('calendarEmbed');

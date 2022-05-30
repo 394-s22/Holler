@@ -105,8 +105,12 @@
 
 
 .addEButt{
-  margin-left:40%;
+  margin-left:35%; 
 }
+.addEButt2{
+  margin-left:33%; 
+}
+
 
 div div {
   justify-items: center;

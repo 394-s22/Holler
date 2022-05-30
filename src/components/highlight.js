@@ -1,7 +1,7 @@
 import React from "react";
 import {jQuery} from "jquery";
 import { Trigger } from "@react-pdf-viewer/highlight";
-import {Button, Provider, defaultTheme,lightTheme} from '@adobe/react-spectrum'
+import {Button, View, Provider, defaultTheme,lightTheme} from '@adobe/react-spectrum'
 
 
 
@@ -23,13 +23,17 @@ export const Highlight = (props) => {
         
     }
     return (
+       
         <Provider className = "text-btn" theme = {defaultTheme} colorScheme="light">
-            <Button  variant="cta" onPress={() => handleClick().then(() => {
+             <View color="gray-50">
+            <Button justifySelf={"center"} variant="cta" onPress={() => handleClick().then(() => {
                 populate_search(props.info).then(()=>{
                     trigger_search()
                 })
             })} color = "green-500" size="lg" >Show Text</Button>
+            </View>
         </Provider>
+       
     );
 };
 

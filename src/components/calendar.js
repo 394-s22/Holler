@@ -1,5 +1,5 @@
 import React from "react"
-import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
+import {Provider, defaultTheme, Button, lightTheme} from '@adobe/react-spectrum';
 
 const calendar = () =>{
     var gapi = window.gapi
@@ -70,10 +70,14 @@ const calendar = () =>{
 
     return (
         <>
-        <div className="addEButt">
+       
+
+        <Provider className = "text-btn" theme = {defaultTheme} colorScheme="light">
+        <div className="addEButt2">
         <Button  color = "green-500" variant="cta" size="lg" onClick={handleClick}>Add a event</Button>
        
         </div>
+        </Provider>
         
         </>
     )
