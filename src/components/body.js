@@ -5,6 +5,7 @@ import {PDFUpload } from "./pdf-upload.js";
 import {useState} from 'react'
 import { CalendarInterface } from "./calendar-page.js";
 import '../App.css' 
+import {Provider, View, defaultTheme, Button, lightTheme} from '@adobe/react-spectrum';
 
 /*
 This component holds the entirety of the webapp, minus the title. 
@@ -39,40 +40,44 @@ export const Body = () => {
 
 
     return (
-    <div >
-        <PDFUpload 
+  
+        <div >
+         <PDFUpload 
         //MAYBE USE AWAIT ASYNC TO GET PDF FILE
-        visibility = {uploadVisibility} 
-        handleVisibility = {handleVisibility} 
-        pdfFile = {pdfFile} 
+         visibility = {uploadVisibility} 
+         handleVisibility = {handleVisibility} 
+         pdfFile = {pdfFile} 
 
-        setPdfFile = {setPdfFile} 
-        setDate = {setDate} 
-        setRev={setRev}
-        setRevDesc = {setRevDesc}
-        setDatedesc = {setDatedesc}
-        setpdfName = {setpdfName}/>
-        <div className='body'>
-            <PDFViewer 
-            visibility = {pdfVisibility} 
-            handleVisibility = {handleVisibility} 
-            pdfFile = {pdfFile} 
-            setPdfFile = {setPdfFile}
-            />
-            <div className='container-2'>
-                <Buttons 
+            setPdfFile = {setPdfFile} 
+            setDate = {setDate} 
+            setRev={setRev}
+            setRevDesc = {setRevDesc}
+            setDatedesc = {setDatedesc}
+            setpdfName = {setpdfName}/>
+            <div className='body'>
+                <PDFViewer 
                 visibility = {pdfVisibility} 
-                date = {date} 
-                rev = {rev}
-                dateDesc = {dateDesc}
-                revDesc = {revDesc}/>
-                <CalendarInterface 
-                visibility = {pdfVisibility}/>
+                handleVisibility = {handleVisibility} 
+                pdfFile = {pdfFile} 
+                setPdfFile = {setPdfFile}
+                />
+                <div className='container-2'>
+                    
+                    <Buttons 
+                    visibility = {pdfVisibility} 
+                    date = {date} 
+                    rev = {rev}
+                    dateDesc = {dateDesc}
+                    revDesc = {revDesc}/>
+                    <CalendarInterface 
+                    visibility = {pdfVisibility}/>
+                </div>
+                
             </div>
             
         </div>
+   
         
-    </div>
     )
 }
 

@@ -88,8 +88,9 @@
 
 .containerPayment {
   display: grid;
-  align-items: center;
-  justify-items: center;
+  /* align-items: center; */
+  /* justify-items: center; */
+  margin-left: -5%;
   padding: 1em;
 }
 
@@ -105,5 +106,13 @@
 
 
 .addEButt{
-  margin-left:40%;
+  margin-left:35%; 
+}
+.addEButt2{
+  margin-left:33%; 
+}
+
+
+div div {
+  justify-items: center;
 }
