@@ -1,6 +1,6 @@
 import Calendar from "./calendar";
 import { CalendarInterface } from "./calendar-page";
-import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
+import {Provider, View, defaultTheme, Button} from '@adobe/react-spectrum';
 
 import {React, useState} from "react";
 import InfoButton from "./info-button.js"
@@ -19,6 +19,8 @@ export const Buttons = (props) => {
     if(props.visibility) {
         console.log(props.PdfFile)
         return (
+           
+
             <div className="buttons">
                  
                 <div className="description">
@@ -26,6 +28,7 @@ export const Buttons = (props) => {
                     <p style={{ marginLeft: "35%", fontWeight:"bold", fontStyle: "italic"}}>Contract Information:</p>
                     
                     <p>Expiration date: {props.date}</p>
+
                     <div className="addEButt"> 
                     <Highlight info={props.date}/>
                     </div>
@@ -43,6 +46,7 @@ export const Buttons = (props) => {
                 <Calendar/>
                 <PaymentButton rev={props.rev} pdfName={props.pdfName}/>
             </div>
+        
         ) 
     }
 }

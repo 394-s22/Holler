@@ -25,13 +25,18 @@ export const Highlight = (props) => {
     return (
        
         <Provider className = "text-btn" theme = {defaultTheme} colorScheme="light">
-             <View color="gray-50">
+             {/* <View color="gray-50"/> */}
+             <View backgroundColor={{
+      base: 'gray-50',
+      tablet: 'gray-50',
+      desktop: 'gray-50'
+    }}> 
             <Button justifySelf={"center"} variant="cta" onPress={() => handleClick().then(() => {
                 populate_search(props.info).then(()=>{
                     trigger_search()
                 })
             })} color = "green-500" size="lg" >Show Text</Button>
-            </View>
+        </View>    
         </Provider>
        
     );

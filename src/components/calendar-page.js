@@ -1,5 +1,5 @@
 
-import {Provider, defaultTheme, Button} from '@adobe/react-spectrum';
+import {Provider, View, defaultTheme, Button} from '@adobe/react-spectrum';
 
 /*
 Component to display a widget of the user's Google calendar if they have entered email.
@@ -10,22 +10,24 @@ export const CalendarInterface = (props) => {
         return(
             <>
             
-       
-            <h3>Your calendar: <input type="email" placeholder="user@gmail.com" id="email"/></h3>
-            {/* <Button variant="cta" onClick={showCal}>Load</Button> */}
             <Provider theme = {defaultTheme} colorScheme="light">
-            
-                <Button variant="negative" onClick={showCal} isQuiet >Load</Button>
-            
-            </Provider>
-                    <div id="calendarEmbedWrapper">
-                <iframe id="calendarEmbed"></iframe>
-                <div id="calendarEmbedBlocker">
-                    <p class="email-prompt">enter email to load calendar</p>
-                </div>
-            </div>
+                <View backgroundColor={{
+        base: 'gray-50',
+        tablet: 'gray-50',
+        desktop: 'gray-50'
+        }} height="size-10"> 
+        
+                <h3>Your calendar: <input type="email" placeholder="user@gmail.com" id="email"/>
+                {/* <Button variant="cta" onClick={showCal}>Load</Button> */}
+              
+                    <Button variant="negative" onClick={showCal} isQuiet >Load</Button>
+                    </h3>
+                   
+                </View>
+                </Provider>
+                       
 
-           
+              
             </>
         );
     }
