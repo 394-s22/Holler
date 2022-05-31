@@ -7,6 +7,7 @@ import InfoButton from "./info-button.js"
 import './button.css';
 import { PaymentButton } from "./paymentButton";
 import { Highlight } from "./highlight";
+import {Email } from "./email";
 
 /*
 Component to hold email, pay, and add calendar event buttons,
@@ -40,6 +41,7 @@ export const Buttons = (props) => {
                 </div>
                 <br></br>
                 <Calendar/>
+                <Email info={props.dateDesc} />
                 <PaymentButton rev={props.rev} pdfName={props.pdfName}/>
             </div>
         ) 
