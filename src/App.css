@@ -98,12 +98,23 @@
   top:-10%;
 }
 
-.description{
+/* .description{
   border: 3px solid;
   margin-right: 5%;
+} */
+
+
+.descriptions{
+  border: 3px solid;
+  border-radius: 10px;
+  padding-bottom: 2%;
+  margin-right: 3%;
+  margin-top: 5%;
 }
-
-
+.descriptions p {
+  margin-left: 5%;
+  margin-right: 3%;
+}
 .addEButt{
   margin-left:40%;
 }

@@ -5,6 +5,7 @@ import {PDFUpload } from "./pdf-upload.js";
 import {useState} from 'react'
 import { CalendarInterface } from "./calendar-page.js";
 import '../App.css' 
+import {defaultTheme, Flex, Provider, View} from '@adobe/react-spectrum'
 
 /*
 This component holds the entirety of the webapp, minus the title. 
@@ -53,12 +54,14 @@ export const Body = () => {
         setDatedesc = {setDatedesc}
         setpdfName = {setpdfName}/>
         <div className='body'>
+        <div className="container">
             <PDFViewer 
             visibility = {pdfVisibility} 
             handleVisibility = {handleVisibility} 
             pdfFile = {pdfFile} 
             setPdfFile = {setPdfFile}
             />
+        </div>
             <div className='container-2'>
                 <Buttons 
                 visibility = {pdfVisibility} 
