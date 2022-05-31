@@ -20,9 +20,9 @@ const Title = () => {
   
   return (
     <div>
-      <AppBar position="fixed" style={{ background: " #410ca3" }}>
+      <AppBar position="fixed" style={{ background: "#ff0000" }}>
 
-        <Toolbar color="purple">
+        <Toolbar color="red">
           <Typography variant="h6">Holler</Typography>
           
         </Toolbar>
