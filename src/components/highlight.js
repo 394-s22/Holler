@@ -40,7 +40,7 @@ export const Highlight = (props) => {
                         populate_search(props.info).then(()=>{
                             trigger_search()
                         })
-                    })} color = "green-500" size="lg" >Show Text</Button>
+                    })} color = "#ff0000" size="lg" >Show Text</Button>
                 </View>
         </Provider>
 
