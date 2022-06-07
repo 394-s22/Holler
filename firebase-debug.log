@@ -1,0 +1,39 @@
+[debug] [2022-06-07T03:28:15.043Z] ----------------------------------------------------------------------
+[debug] [2022-06-07T03:28:15.044Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2022-06-07T03:28:15.045Z] CLI Version:   10.5.0
+[debug] [2022-06-07T03:28:15.045Z] Platform:      darwin
+[debug] [2022-06-07T03:28:15.045Z] Node Version:  v17.5.0
+[debug] [2022-06-07T03:28:15.049Z] Time:          Mon Jun 06 2022 22:28:15 GMT-0500 (Central Daylight Time)
+[debug] [2022-06-07T03:28:15.049Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-07T03:28:15.054Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-07T03:28:15.054Z] > authorizing via signed-in user (dlsotir@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/davidsotir/Documents/Holler/Holler
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-06-07T03:28:20.032Z] Using project from CLI flag: holler-8e6d5
+[debug] [2022-06-07T03:28:20.035Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/holler-8e6d5 [none]
+[debug] [2022-06-07T03:28:20.384Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/holler-8e6d5 403
+[debug] [2022-06-07T03:28:20.384Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/holler-8e6d5 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-06-07T03:28:20.385Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-06-07T03:28:20.385Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:47:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project holler-8e6d5. Please make sure the project exists and your account has permission to access it.
