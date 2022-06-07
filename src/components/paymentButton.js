@@ -5,8 +5,6 @@ import {React, useState} from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
-import {Provider, View, defaultTheme, Button, lightTheme} from '@adobe/react-spectrum';
-
 
 import "react-toastify/dist/ReactToastify.css";
 import { createPromiseCapability } from "pdfjs-dist";
@@ -37,7 +35,6 @@ export const PaymentButton = (props) => {
       }
 
         return (
-        
             <div className="containerPayment">
             <StripeCheckout
               stripeKey="pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233"
@@ -48,7 +45,6 @@ export const PaymentButton = (props) => {
               shippingAddress
             />
           </div>
-     
         ) 
     }
 
